@@ -9,7 +9,7 @@ const useUserData = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("api/v1/users/user");
+        const response = await axios.get("https://properone.vercel.app/api/v1/users/user");
         console.log("Data Event ", response.data.status);
         setUserData(response.data);
 
