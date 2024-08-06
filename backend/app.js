@@ -3,7 +3,7 @@ const cors = require("cors");
 const cookieparser = require("cookie-parser");
 const path = require("path");
 const morgan = require("morgan");
-const AppError = require("./utils/AppError");
+const AppError = require("./utils/apperror");
 
 const eventRouter = require("./route/eventRoute");
 const userRouter = require("./route/userRoute");
