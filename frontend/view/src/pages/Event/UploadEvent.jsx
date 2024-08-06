@@ -68,7 +68,7 @@ function UploadEvent() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5173/api/v1/events",
+        "https://properone.vercel.app/api/v1/events",
         formData,
         {
           headers: {

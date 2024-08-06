@@ -42,7 +42,7 @@ function EventDeatils({ userData }) {
   const handleDownloadPDF = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5173/api/v1/events/${params.id}/generate-pdf`,
+        `https://properone.vercel.app/api/v1/events/${params.id}/generate-pdf`,
         {
           responseType: "blob",
         }

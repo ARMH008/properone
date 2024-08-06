@@ -17,10 +17,10 @@ const EditUsers = () => {
       let response;
       if (search) {
         response = await axios.get(
-          `http://localhost:5173/api/v1/users/searchuser?name=${search}`
+          `https://properone.vercel.app/api/v1/users/searchuser?name=${search}`
         );
       } else {
-        response = await axios.get(`http://localhost:5173/api/v1/users`);
+        response = await axios.get(`https://properone.vercel.app/api/v1/users`);
       }
       setAllUser(response.data.data.users);
       console.log("Fetching all user Data", response.data.data.users);
@@ -33,7 +33,9 @@ const EditUsers = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5173/api/v1/users");
+        const response = await axios.get(
+          "https://properone.vercel.app/api/v1/users"
+        );
         console.log("User Fetching daat", response.data.data.data);
         setUsers(response.data.data.data);
       } catch (err) {
@@ -58,7 +60,7 @@ const EditUsers = () => {
       console.log("Before Updating the userData ", userData.role);
       console.log("user role userID ", userRoles[user._id]);
       const response = await axios.patch(
-        `http://localhost:5173/api/v1/users/${user._id}`,
+        `https://properone.vercel.app/api/v1/users/${user._id}`,
         userData
       );
       console.log("Updated user:", response.data.data.data);
@@ -76,7 +78,7 @@ const EditUsers = () => {
   const handleUserDelete = async (user) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5173/api/v1/users/${user._id}`
+        `https://properone.vercel.app/api/v1/users/${user._id}`
       );
       console.log("Successfully deleted the user ", response);
       // Remove the deleted user from allUser state

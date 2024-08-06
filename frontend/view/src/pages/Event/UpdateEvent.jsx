@@ -26,7 +26,7 @@ function EventForm() {
     const getEvent = async () => {
       try {
         const response = await axios.get(
-          `http://127.0.0.1:8000/api/v1/events/${eventId}`
+          `https://properone.onrender.com/api/v1/events/${eventId}`
         );
         setEventData(response.data.data.event);
         console.log("Before Update fetched Data :", response.data.data.event);
@@ -184,12 +184,12 @@ function EventForm() {
       let updateResponse;
       if (eventId) {
         updateResponse = await axios.patch(
-          `http://localhost:5173/api/v1/events/${eventId}`,
+          `https://properone.vercel.app/api/v1/events/${eventId}`,
           updatedFormData
         );
       } else {
         updateResponse = await axios.post(
-          "http://localhost:5173/api/v1/events",
+          "https://properone.vercel.app/api/v1/events",
           updatedFormData
         );
       }

@@ -36,7 +36,7 @@ function UploadWinners() {
       });
 
       const response = await axios.patch(
-        `http://localhost:5173/api/v1/events/${params.id}/winnerimages`,
+        `https://properone.vercel.app/api/v1/events/${params.id}/winnerimages`,
         formData,
         {
           headers: {

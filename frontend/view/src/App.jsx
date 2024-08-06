@@ -36,7 +36,7 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5173/api/v1/users/user"
+          "https://properone.vercel.app/api/v1/users/user"
         );
         console.log("Data Event ", response.data.status);
         setUserData(response.data);
