@@ -138,7 +138,7 @@ exports.getAllEvent = catchAsync(async (req, res, next) => {
 
   const users = await User.find();
   const emailPromises = users.map(async (user) => {
-    const url = `http://localhost:5173/event/${newEvent._id}`;
+    const url = `https://properone.vercel.app/event/${newEvent._id}`;
     const emailInstance = new Email(user, url);
     return emailInstance.sendEventNotification(newEvent); // Return the promise
   });
@@ -296,7 +296,7 @@ exports.generatePDF = async (req, res) => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
-    await page.goto(`http://localhost:5173/event/${req.params.id}`, {
+    await page.goto(`https://properone.vercel.app/event/${req.params.id}`, {
       waitUntil: "networkidle2",
     });
 
